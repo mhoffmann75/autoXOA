@@ -175,7 +175,7 @@ function Start_XOAServer () {
 	echo "IP Configuration"
 	$SUDO ip a
 	echo " "
-	$SUDO cd /xoa/xo-server
+	cd /xoa/xo-server
 	echo "Starting xo-server"
 	$SUDO npm start
 }
