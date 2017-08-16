@@ -141,6 +141,9 @@ function Install_XOA-server () {
 	#$SUDO npm run build	
 	echo "Command: curl -L -o .xo-server.yaml https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml"
 	$SUDO curl -L -o .xo-server.yaml https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml
+	$SUDO cp /xoa/xo-server/xo-server.service /etc/systemd/system/xo-server.service
+	$SUDO sed -i /etc/systemd/system/xo-server.service -e 's*ExecStart=/usr/local/bin/xo-server*WorkingDirectory=/xoa/xo-server/bin\nExecStart=/xoa/xo-server/bin/xo-server*' 
+	$SUDO systemctl enable xo-server
 	popd
 }
 
@@ -172,12 +175,13 @@ function Start_XOAServer () {
 	#                  filename height width
 	#whiptail --textbox test_textbox 12 80
 	#whiptail --title "Example Dialog" --msgbox "IP Configuration \n $ip \n Click Okay to start XOA-Server." 3>&1 1>&2 2>&3
-	echo "IP Configuration"
-	$SUDO ip a
-	echo " "
-	cd /xoa/xo-server
-	echo "Starting xo-server"
-	$SUDO npm start
+	#echo "IP Configuration"
+	#$SUDO ip a
+	#echo " "
+	#cd /xoa/xo-server
+	#echo "Starting xo-server"
+	#$SUDO npm start
+	$SUDO systemctl start xo-server
 }
 
 mainMenu
