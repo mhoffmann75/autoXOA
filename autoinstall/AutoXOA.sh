@@ -160,8 +160,8 @@ function Install_XOA-web () {
 
 function Install_autoXOA () {
 	$SUDO cd /xoa
-	echo "Command: curl -L https://raw.githubusercontent.com/mhoffmann75/autoXOA/master/autoinstall/AutoXOA.sh > autoXOA.sh"
-	$SUDO curl -L https://raw.githubusercontent.com/mhoffmann75/autoXOA/master/autoinstall/AutoXOA.sh > autoXOA.sh
+	echo "Command: curl -L https://goo.gl/W85Cgr > autoXOA.sh"
+	$SUDO curl -L https://goo.gl/W85Cgr > autoXOA.sh
 	$SUDO chmod +x autoXOA.sh
 	$SUDO cd ..
 }
