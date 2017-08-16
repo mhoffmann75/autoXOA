@@ -21,7 +21,7 @@ apt-get install curl
 
 Run the AutoXOA script
 ```
-curl -L autoXOA.zxcv.us | bash
+curl -L https://goo.gl/W85Cgr | bash
 ```
 
 And thats it! The default installation is in /xoa/. Preceding instalation, you can start the XO-server package from the autoXOA script. The script is installed in /xoa/autoXOA.sh.
@@ -34,7 +34,7 @@ apt-get install whiptail
 
 If you are running on Ubuntu, you must run it under sudo -i for the bash script to function.
 ```
-sudo -i curl -L autoXOA.zxcv.us | bash
+sudo -i curl -L https://goo.gl/W85Cgr | bash
 ```
 
 ![AutoXOA Install Menu](https://raw.githubusercontent.com/hackmods/autoXOA/master/images/startXOA.PNG)
