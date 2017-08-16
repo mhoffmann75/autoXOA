@@ -133,10 +133,12 @@ function Install_XOA-server () {
 	echo "Command: git clone -b stable http://github.com/vatesfr/xo-server"
 	$SUDO git clone -b stable http://github.com/vatesfr/xo-server
 	$SUDO cd xo-server
-	echo "Command: npm install"
-	$SUDO npm install 
-	echo "Command: npm run build"
-	$SUDO npm run build	
+	echo "Command: yarn"
+	$SUDO yarn
+	#echo "Command: npm install"
+	#$SUDO npm install 
+	#echo "Command: npm run build"
+	#$SUDO npm run build	
 	echo "Command: curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml"
 	$SUDO curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml
 	$SUDO cd ..
@@ -147,17 +149,19 @@ function Install_XOA-web () {
 	echo "Command: git clone -b stable http://github.com/vatesfr/xo-web"
 	$SUDO git clone -b stable http://github.com/vatesfr/xo-web
 	$SUDO cd xo-web
-	echo "Command: npm install"
-	$SUDO npm install
-	echo "Command: npm run build	"
-	$SUDO npm run build	
+	echo "Command: yarn"
+	$SUDO yarn
+	#echo "Command: npm install"
+	#$SUDO npm install
+	#echo "Command: npm run build	"
+	#$SUDO npm run build	
 	$SUDO cd ..
 }
 
 function Install_autoXOA () {
 	$SUDO cd /xoa
-	echo "Command: curl -L autoxoa.zxcv.us > autoXOA.sh"
-	$SUDO curl -L autoxoa.zxcv.us > autoXOA.sh
+	echo "Command: curl -L https://raw.githubusercontent.com/mhoffmann75/autoXOA/master/autoinstall/AutoXOA.sh > autoXOA.sh"
+	$SUDO curl -L https://raw.githubusercontent.com/mhoffmann75/autoXOA/master/autoinstall/AutoXOA.sh > autoXOA.sh
 	$SUDO chmod +x autoXOA.sh
 	$SUDO cd ..
 }
@@ -177,4 +181,4 @@ function Start_XOAServer () {
 }
 
 mainMenu
-echo "Thank you for using AutoXOA. Leave feedback at zxcv.us or contribute to the Github project."
+echo "Thank you for using AutoXOA. Leave feedback at or contribute to the Github project."
