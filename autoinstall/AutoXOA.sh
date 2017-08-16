@@ -129,10 +129,10 @@ function InitialUpdates() {
 }
 
 function Install_XOA-server () {
-	$SUDO cd /xoa
+	pushd /xoa
 	echo "Command: git clone -b stable http://github.com/vatesfr/xo-server"
 	$SUDO git clone -b stable http://github.com/vatesfr/xo-server
-	$SUDO cd xo-server
+	cd xo-server
 	echo "Command: yarn"
 	$SUDO yarn
 	#echo "Command: npm install"
@@ -141,29 +141,29 @@ function Install_XOA-server () {
 	#$SUDO npm run build	
 	echo "Command: curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml"
 	$SUDO curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml
-	$SUDO cd ..
+	popd
 }
 
 function Install_XOA-web () {
-	$SUDO cd /xoa
+	pushd /xoa
 	echo "Command: git clone -b stable http://github.com/vatesfr/xo-web"
 	$SUDO git clone -b stable http://github.com/vatesfr/xo-web
-	$SUDO cd xo-web
+	cd xo-web
 	echo "Command: yarn"
 	$SUDO yarn
 	#echo "Command: npm install"
 	#$SUDO npm install
 	#echo "Command: npm run build	"
 	#$SUDO npm run build	
-	$SUDO cd ..
+	popd
 }
 
 function Install_autoXOA () {
-	$SUDO cd /xoa
+	pushd /xoa
 	echo "Command: curl -L https://goo.gl/W85Cgr > autoXOA.sh"
 	$SUDO curl -L https://goo.gl/W85Cgr > autoXOA.sh
 	$SUDO chmod +x autoXOA.sh
-	$SUDO cd ..
+	popd
 }
 
 function Start_XOAServer () {
