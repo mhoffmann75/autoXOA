@@ -139,8 +139,8 @@ function Install_XOA-server () {
 	#$SUDO npm install 
 	#echo "Command: npm run build"
 	#$SUDO npm run build	
-	echo "Command: curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml"
-	$SUDO curl -L https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml > .xo-server.yaml
+	echo "Command: curl -L -o .xo-server.yaml https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml"
+	$SUDO curl -L -o .xo-server.yaml https://raw.githubusercontent.com/hackmods/autoXOA/master/config/xo-server.yaml
 	popd
 }
 
@@ -160,8 +160,8 @@ function Install_XOA-web () {
 
 function Install_autoXOA () {
 	pushd /xoa
-	echo "Command: curl -L https://goo.gl/W85Cgr > autoXOA.sh"
-	$SUDO curl -L https://goo.gl/W85Cgr > autoXOA.sh
+	echo "Command: curl -L -o autoXOA.sh https://goo.gl/W85Cgr"
+	$SUDO curl -L -o autoXOA.sh https://goo.gl/W85Cgr 
 	$SUDO chmod +x autoXOA.sh
 	popd
 }
